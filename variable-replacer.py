@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 class VariableReplacer:
+    """Class to replace variables in a template file with values from a variables file."""
     def __init__(self):
         self.variables = {}
     
@@ -36,7 +37,7 @@ class VariableReplacer:
         
         # Perform replacements
         modified_content = content
-        for pattern, format_str in patterns:
+        for pattern, _ in patterns:
             matches = re.finditer(pattern, content)
             for match in matches:
                 var_name = match.group(1).strip()
@@ -58,6 +59,7 @@ class VariableReplacer:
             print(modified_content)
 
 def main():
+    """Main function to parse arguments and replace variables in the template file."""
     parser = argparse.ArgumentParser(
         description='Replace variables in a template file with values from a variables file'
     )
@@ -71,7 +73,7 @@ def main():
     try:
         replacer.load_variables(args.variables)
         replacer.process_template(args.template, args.output)
-    except Exception as e:
+    except (FileNotFoundError, json.JSONDecodeError, IOError) as e:
         print(f"Error: {e}")
         return 1
     
