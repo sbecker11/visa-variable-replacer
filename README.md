@@ -7,6 +7,7 @@ A Python utility for replacing variables in template files with values from a va
 1. Clone this repository:
 ```bash
 git clone https://github.com/sbecker11/visa-variable-replacer.git
+
 cd visa-variable-replacer
 ```
 
