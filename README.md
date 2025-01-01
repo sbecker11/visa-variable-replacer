@@ -6,8 +6,8 @@ A Python utility for replacing variables in template files with values from a va
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/sbecker11/var-replace.git
-cd var-replace
+git clone https://github.com/sbecker11/visa-variable-replacer.git
+cd visa-variable-replacer
 ```
 
 2. No additional dependencies required! The script uses only Python standard library.
@@ -16,7 +16,7 @@ cd var-replace
 
 ### Basic Command
 ```bash
-python variable-replacer.py template_file variables_file [-o output_file]
+python visa-variable-replacer.py template_file variables_file [-o output_file]
 ```
 
 If no output file is specified, the result will be printed to stdout.
@@ -89,19 +89,19 @@ The script will:
 
 1. Using JSON template with .env variables:
 ```bash
-python variable-replacer.py template.json .env -o config.json
+python visa-variable-replacer.py template.json .env -o config.json
 ```
 
 2. Print to stdout:
 ```bash
-python variable-replacer.py template.json variables.env
+python visa-variable-replacer.py template.json variables.env
 ```
 
 ## Project Structure
 ```
-var-replace/
+visa-variable-replacer/
 ├── README.md
-├── variable-replacer.py
+├── visa-variable-replacer.py
 ├── examples/
 │   ├── template.json
 │   └── variables.env
